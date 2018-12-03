@@ -8,44 +8,89 @@
 </ion-toolbar>
 </ion-header>
 
-<ion-content margin=10>
-	<ion-slides pager>
-		<ion-slide  >
-		
-	<div>
-		<ion-input type="text" id="champs"  [(ngModel)]="champs" width="100px"></ion-input>
-		<ion-icon name="backspace" id="back" (click)='back()'></ion-icon>
-	</div>
-	
-		<div id="number">
-		<button ion-button outline (click)='add(7);'>7</button>
-	<button ion-button outline (click)='add(8);'>8</button>
-	<button ion-button outline (click)='add(9);'>9</button>
-	<button ion-button (click)='signe("+");' >+</button><br>
-	<button ion-button outline (click)='add(4);'>4</button>
-	<button ion-button outline (click)='add(5);'>5</button>
-	<button ion-button outline (click)='add(6);'>6</button>
-	<button ion-button (click)='signe("-");'>-</button><br>
-	<button ion-button outline (click)='add(1);'>1</button>
-	<button ion-button outline (click)='add(2);' >2</button>
-	<button ion-button outline (click)='add(3);'>3</button>
-	<button ion-button (click)='signe("*");'>*</button><br>
-	<button ion-button outline (click)='add(0);'>0</button>
-	<button ion-button outline (click)='add(".");'>.</button>
-	<button ion-button color='danger' (click)='equal();'>=</button>
-	<button ion-button (click)='signe("/");'>/</button><br>
-</div>
-</ion-slide>
-<ion-slide><div>
-					<ion-input type="text" id="champs"  [(ngModel)]="champs" width="100px"></ion-input>
-					<ion-icon name="backspace" id="back" (click)='back()'></ion-icon>
-				</div>
-	<div id="number">
-			
-	<button ion-button outline (click)='add("√")'>√</button>
-	<button ion-button outline (click)='add("²")'>²</button>
-</div>
-</ion-slide>
-	<p id="t"></p>		
-</ion-slides>
+<ion-content no-pputsing>
+		<ion-grid >
+			<ion-row>
+				<ion-col col-sm>
+					<ion-input type="text" [(ngModel)]="champs" readonly="on" id="champs"></ion-input>
+				</ion-col>	
+			</ion-row>
+			<ion-row>
+				<ion-col >
+						<button ion-button  (click)='special("√")'>√</button>
+				</ion-col>
+				<ion-col >
+						<button ion-button (click)='special("²")'>²</button>
+				</ion-col>
+				<ion-col >
+					<button ion-button (click)='clearAll()'>C</button>
+				</ion-col>
+				<ion-col col>
+					<button ion-button (click)='clearOne()'>
+						<ion-icon name="arrow-back" id="back" ></ion-icon>
+					</button>
+				</ion-col>
+				<ion-col col>
+					<button ion-button (click)='presentToast()'>
+						<ion-icon name="close" id="back" ></ion-icon></button>
+					</ion-col>
+			</ion-row>
+			<ion-row >
+				<ion-col>
+					<button ion-button outline color='dark' (click)='puts(7);'>7</button>
+				</ion-col>
+				<ion-col>
+					<button ion-button outline color='dark' (click)='puts(8);'>8</button>
+				</ion-col>
+				<ion-col>
+					<button ion-button outline color='dark' (click)='puts(9);'>9</button>
+				</ion-col>
+				<ion-col>
+					<button ion-button outline color='signe' (click)='signe("+");' >+</button>
+			</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+					<button ion-button outline color='dark' (click)='puts(4);'>4</button>
+				</ion-col>
+				<ion-col>
+					<button ion-button outline color='dark' (click)='puts(5);'>5</button>
+				</ion-col>
+				<ion-col >
+					<button ion-button outline color='dark' (click)='puts(6);'>6</button>
+				</ion-col>
+				<ion-col>
+					<button ion-button outline color='signe' (click)='signe("-");'>-</button>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+					<button ion-button outline color='dark' (click)='puts(1);'>1</button>
+				</ion-col>
+				<ion-col >
+					<button ion-button outline color='dark' (click)='puts(2);' >2</button>
+				</ion-col>
+				<ion-col >
+					<button ion-button outline color='dark' (click)='puts(3);'>3</button>
+				</ion-col>
+				<ion-col >
+					<button ion-button outline color='signe' (click)='signe("*");'>*</button>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col >
+					<button ion-button outline color='dark' (click)='puts(0);'>0</button>
+				</ion-col>
+				<ion-col >
+					<button ion-button outline color='dark' (click)='puts(".");'>.</button>
+				</ion-col>
+				<ion-col >
+					<button ion-button color='danger' (click)='equal();'>=</button>
+				</ion-col>
+				<ion-col >
+					<button ion-button outline color='signe' (click)='signe("/");'>/</button>
+				</ion-col>
+			</ion-row>
+</ion-grid>
+
 </ion-content>

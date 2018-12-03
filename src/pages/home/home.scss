@@ -1,23 +1,11 @@
-page-home {
+ion-row{
+	button{
+		width:100% !important;
+		margin: 0 0 0 0!important;
 
-}
-button{
-	width:80px
-
-}
-#champs{
-	position: absolute;
-	left: 0%;
-	top:0%;
-	width:280px;
-	background-color: #ccc
-}
-#back{
-	position: absolute;
-	left: 50%;
-	top:5%;
-}
-#number{
-position: absolute;
-top: 10%;
+	}
+	ion-col{
+		padding: 0 0 0 0 !important;
+	}
+	
 }
